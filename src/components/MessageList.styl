@@ -1,0 +1,22 @@
+.messages
+  grid-column 2/3
+  grid-row 1/2
+  overflow scroll
+  .message
+    display grid
+    grid-template-columns max-content auto
+    padding 4px
+    line-height 1.6
+    .time
+      grid-column 1/2
+      grid-row 1/2
+      padding 4px
+      opacity 0.8
+      font-weight lighter
+    .body
+      grid-column 2/3
+      grid-row 1/2
+      padding 4px
+      .name
+        padding-right 8px
+        font-weight bold

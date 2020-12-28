@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.idea
+.next
+*.swp
+*.zip
+
+node_modules/
+
+venv/

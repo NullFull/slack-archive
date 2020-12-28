@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@zeit/next-stylus": "^1.0.1",
+    "adm-zip": "^0.5.1",
+    "mongodb": "^3.6.3",
+    "next": "^10.0.3",
+    "next-auth": "^3.1.0",
+    "next-compose-plugins": "^2.2.1",
+    "pullstate": "^1.20.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-window-infinite-loader": "^1.0.5",
+    "stylus": "^0.54.8",
+    "swr": "^0.3.11"
+  }
+}
