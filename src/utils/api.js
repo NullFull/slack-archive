@@ -3,6 +3,12 @@ const response = (res, data) => {
   res.end(JSON.stringify(data))
 }
 
+const reject = res => {
+  res.status(401)
+  res.end()
+}
+
 export {
-  response
+  response,
+  reject
 }
