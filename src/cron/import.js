@@ -47,7 +47,7 @@ const importMessages = async messages => {
       return
     }
 
-    return await collection.insertOne({
+    return collection.insertOne({
       ...message,
       date,
       channel,
