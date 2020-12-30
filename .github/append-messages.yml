@@ -1,0 +1,17 @@
+name: append-messages
+on:
+  schedule:
+    - cron: '10 0 * * *'
+jobs:
+  check-new-report:
+    name: append-yesterday-message
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
+        run: |
+          yarn install
+          node src/cron/import.js
