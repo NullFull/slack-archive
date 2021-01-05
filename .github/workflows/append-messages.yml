@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - name: Import Messages
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
