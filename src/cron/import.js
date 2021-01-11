@@ -73,6 +73,9 @@ const main = async () => {
       page
     })
 
+    console.debug(process.env.SLACK_TOKEN.length)
+    console.debug(process.env.SLACK_TOKEN.slice(0, 4))
+
     const response = await fetch(endpoint + '?' + qs)
     const { messages } = await response.json()
 
