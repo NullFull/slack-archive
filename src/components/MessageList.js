@@ -6,9 +6,14 @@ import style from './MessageList.styl'
 
 const formatTime = t => `${t.getFullYear()}-${t.getMonth() + 1}-${t.getDate()} ${t.getHours()}:${t.getMinutes()}`
 
+const getUsername = (profile) => {
+  if(profile) {
+    return profile['display_name'].length < 1 ? profile['real_name'] : profile['display_name']
+  }
+}
+
 const Message = ({message}) => {
   const time = new Date(message['ts'] * 1000)
-  const username = message['user_profile']['display_name'].length < 1 ? message['user_profile']['real_name'] : message['user_profile']['display_name']
 
   return (
     <div>
@@ -16,7 +21,7 @@ const Message = ({message}) => {
         <div className={style.time}>{formatTime(time)}</div>
         <div className={style.time}>{formatTime(time)}</div>
         <div className={style.body}>
-          <span className={style.name}>{username}</span>
+          {message['user_profile'] && <span className={style.name}>{getUsername(message['user_profile'])}</span>}
           <span className={style.text}>{message['text']}</span>
         </div>
       </div>
