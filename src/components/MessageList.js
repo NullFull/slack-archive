@@ -8,6 +8,7 @@ const formatTime = t => `${t.getFullYear()}-${t.getMonth() + 1}-${t.getDate()} $
 
 const Message = ({message}) => {
   const time = new Date(message['ts'] * 1000)
+  const username = message['user_profile']['display_name'].length < 1 ? message['user_profile']['real_name'] : message['user_profile']['display_name']
 
   return (
     <div>
@@ -15,9 +16,7 @@ const Message = ({message}) => {
         <div className={style.time}>{formatTime(time)}</div>
         <div className={style.time}>{formatTime(time)}</div>
         <div className={style.body}>
-          {message['user_profile'] &&
-          <span className={style.name}>{message['user_profile']['display_name']}</span>
-          }
+          <span className={style.name}>{username}</span>
           <span className={style.text}>{message['text']}</span>
         </div>
       </div>
