@@ -17,7 +17,7 @@ export default async (req, res) => {
   const db = client.db('slack-archive')
   const messages = await db.collection('messages').find({
     channel
-  }).sort({ts: -1}).limit(100).toArray()
+  }).sort({ts: -1}).limit(10000).toArray()
 
   api.response(res, {
     items: messages
