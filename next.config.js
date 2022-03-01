@@ -4,7 +4,6 @@ const withStylus = require('@zeit/next-stylus')
 
 
 let config = {
-  webpack5: false,
   webpack: config => {
     config.resolve.alias = {
       ...config.resolve.alias,
